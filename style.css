@@ -122,10 +122,9 @@ body.dark-mode .btn-blue {
   flex: 0 0 300px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100%;
-  gap: 16px;
+  gap: 12px;
 }
 .hero-img img{
   width: auto;
@@ -139,6 +138,7 @@ body.dark-mode .btn-blue {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  align-self: center;
   padding: 10px;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.9);
@@ -146,6 +146,7 @@ body.dark-mode .btn-blue {
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  margin-top: 8px;
 }
 
 .github-link:hover {
@@ -588,3 +589,4 @@ input:checked + .slider:before {
     transform: translateX(22px);
   }
 }
+
