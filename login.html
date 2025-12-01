@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Johnrel Valencia</title>
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body class="page-two">
+  <!-- Dark Mode Toggle -->
+  <div class="theme-toggle-container">
+    <div class="theme-toggle-card">
+      <div class="theme-icon sun-icon">☀️</div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+      </label>
+      <div class="theme-icon moon-icon">🌙</div>
+    </div>
+  </div>
+
+  <main class="page-two-content">
+    <section class="card">
+      <h2>About Myself</h2>
+      <p>Hello! I'm <strong>Johnrel Valencia</strong>, a BSIT student at CTU from Cebu. I enjoy web development, UI/UX and building creative projects.</p>
+    </section>
+
+    <section class="card">
+      <h2>Achievements</h2>
+      <ul>
+        <li>🏅 Bachelor of Science in Information Technology, CTU-M (Ongoing)</li>
+        <li>🎓 SHS at Immaculate Heart of Mary Academy</li>
+        <li>🌟 Event performer, Student Ambassador</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Code Languages</h2>
+      <ul>
+        <li>HTML • CSS • JavaScript • Java • C • Python</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <a class="project-logo" href="https://rentify-landlord.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="Open Rentify">
+          <span class="project-initial">R</span>
+        </a>
+      </div>
+    </section>
+
+    <div style="text-align:center; margin:18px 0;">
+      <a href="index.html" class="back-link">&larr; Back to Home</a>
+    </div>
+  </main>
+
+  <footer class="contact-info">
+    <p>
+      <img src="IG.png.png" alt="Email" style="width:20px;height:20px;vertical-align:middle;">
+      valenciajohnrel@gmail.com &nbsp;&nbsp;&nbsp;
+
+      <img src="FB.PNG.png" alt="Facebook" style="width:30px;height:30px;vertical-align:middle;margin-right:-5px;">
+      Johnrel Valencia &nbsp;&nbsp;&nbsp;
+
+      <img src="IGS.PNG.png" alt="Instagram" style="width:20px;height:20px;vertical-align:middle;">
+      @johnrelvalencia
+    </p>
+  </footer>
+
+  <script>
+    (function(){
+      const body = document.body;
+      const toggle = document.getElementById('theme-toggle');
+      const saved = localStorage.getItem('portfolio-theme');
+
+      function setTheme(mode){
+        body.classList.toggle('dark-mode', mode === 'dark');
+        if(toggle) toggle.checked = (mode === 'dark');
+        localStorage.setItem('portfolio-theme', mode);
+      }
+
+      if(saved){
+        setTheme(saved);
+      }else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+        setTheme('dark');
+      }else{
+        setTheme('light');
+      }
+
+      toggle?.addEventListener('change', () => {
+        setTheme(toggle.checked ? 'dark' : 'light');
+      });
+    })();
+  </script>
+</body>
+</html>
